@@ -315,6 +315,40 @@ li{list-style:none;}
   .footer__inner{flex-direction:column;align-items:center;text-align:center;}
   .footer__mid .links{justify-content:center;}
 }
+
+/* =========================================================
+   Contact form
+   ========================================================= */
+.contact{margin-top:150px;max-width:720px;margin-inline:auto;padding-inline:24px;}
+.contact__head{text-align:center;margin-bottom:44px;}
+.contact__head .en{display:block;margin-bottom:6px;}
+.contact__head .jp{font-size:18px;letter-spacing:3px;}
+.contact__lead{text-align:center;font-size:13px;line-height:2;color:#6a6a66;letter-spacing:1px;margin-bottom:40px;}
+.contact__form{display:flex;flex-direction:column;gap:24px;}
+.field{display:flex;flex-direction:column;gap:8px;}
+.field label{font-size:13px;letter-spacing:2px;color:#4b4b4b;}
+.field label .req{color:#c0913f;font-size:11px;margin-left:8px;letter-spacing:1px;}
+.field input,.field textarea{
+  width:100%;font-family:inherit;font-size:15px;color:#333;
+  border:1px solid #d5d5cf;background:#fcfcfa;padding:13px 15px;border-radius:2px;
+  transition:border-color .3s,box-shadow .3s;
+}
+.field input:focus,.field textarea:focus{
+  outline:none;border-color:#c9a24b;box-shadow:0 0 0 3px rgba(216,180,90,.15);
+}
+.field textarea{resize:vertical;min-height:150px;line-height:1.9;}
+.contact__submit{text-align:center;margin-top:8px;}
+.contact__submit button{
+  font-family:inherit;cursor:pointer;border:none;
+  background:#d8b45a;color:#2a2a1e;font-size:14px;letter-spacing:3px;
+  padding:15px 60px;border-radius:2px;transition:background .3s,transform .3s;
+}
+.contact__submit button:hover{background:#c9a24b;transform:translateY(-2px);}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+@media(max-width:768px){
+  .contact{margin-top:100px;}
+  .contact__submit button{width:100%;padding:15px 0;}
+}
 </style>
 </head>
 <body>
@@ -337,7 +371,7 @@ li{list-style:none;}
     <a href="#footer">会社概要</a>
     <a href="#concept">経営理念</a>
     <a href="#information">事業内容</a>
-    <a href="#footer" class="gnav__cta">お問い合わせ</a>
+    <a href="#contact" class="gnav__cta">お問い合わせ</a>
   </nav>
 </header>
 
@@ -350,7 +384,7 @@ li{list-style:none;}
     <h1 class="hero__title"><span>まっすぐに、しなやかに。</span><span><span class="accent">成長</span>を根から支える。</span></h1>
     <p class="hero__lead">竹のように、まっすぐ伸び、風にしなやかにしなう。<br>広告・営業支援・集客企画で、アミューズメント業界の店舗の成長を根元から支えるパートナーです。</p>
     <div class="hero__cta">
-      <a href="#footer" class="btn btn-primary">お問い合わせ&nbsp;&nbsp;→</a>
+      <a href="#contact" class="btn btn-primary">お問い合わせ&nbsp;&nbsp;→</a>
       <a href="#information" class="btn btn-ghost">事業内容を見る</a>
     </div>
   </div>
@@ -430,7 +464,7 @@ li{list-style:none;}
         <strong>営業支援事業</strong>では、アミューズメント業界だけに留まらず、企業の課題解決、最適な営業企画提案などの支援も行います。
       </p>
       <p class="note fade d2">※SNSは活用しますが、BtoC等のWEB広告代理店とは異なる、業界特化の集客企画会社です。</p>
-      <a href="#footer" class="more fade d3">お問い合わせ</a>
+      <a href="#contact" class="more fade d3">お問い合わせ</a>
     </div>
   </section>
 
@@ -471,8 +505,49 @@ li{list-style:none;}
       </div>
       <div class="access__map fade d1"><iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%854%E4%B8%81%E7%9B%AE24%E7%95%AA5%E5%8F%B7%20%E7%AC%AC2%E6%A3%AE%E3%83%93%E3%83%AB401&hl=ja&z=17&output=embed" width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen aria-label="BAMBOOL 所在地の地図"></iframe></div>
       <p class="access__addr fade d2">〒450-0002<br>愛知県名古屋市中村区名駅4丁目24番5号 第2森ビル401</p>
-      <a href="#footer" class="more fade d2">お問い合わせ</a>
+      <a href="#contact" class="more fade d2">お問い合わせ</a>
     </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="contact" id="contact">
+    <div class="contact__head fade">
+      <span class="en">contact</span>
+      <span class="jp">お問い合わせ</span>
+    </div>
+    <p class="contact__lead fade d1">
+      集客企画・営業支援に関するご相談、お見積もりなど、お気軽にお問い合わせください。<br>
+      内容を確認のうえ、担当者よりご連絡いたします。
+    </p>
+    <form class="contact__form fade d1" action="https://formsubmit.co/t.takemori@bambool.net" method="POST">
+      <input type="hidden" name="_subject" value="【BAMBOOL】ホームページからのお問い合わせ">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field">
+        <label for="cf-name">お名前<span class="req">必須</span></label>
+        <input id="cf-name" type="text" name="お名前" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="cf-company">会社名・店舗名</label>
+        <input id="cf-company" type="text" name="会社名・店舗名" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="cf-email">メールアドレス<span class="req">必須</span></label>
+        <input id="cf-email" type="email" name="メールアドレス" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="cf-tel">電話番号</label>
+        <input id="cf-tel" type="tel" name="電話番号" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="cf-msg">お問い合わせ内容<span class="req">必須</span></label>
+        <textarea id="cf-msg" name="お問い合わせ内容" required></textarea>
+      </div>
+      <div class="contact__submit">
+        <button type="submit">送信する</button>
+      </div>
+    </form>
   </section>
 
   <!-- Footer -->
@@ -496,7 +571,7 @@ li{list-style:none;}
           <a href="#concept">経営理念</a><span>/</span>
           <a href="#information">事業内容</a>
         </div>
-        <a href="mailto:t.takemori@bambool.net" class="footer__contact">お問い合わせ&nbsp;&nbsp;&gt;</a>
+        <a href="#contact" class="footer__contact">お問い合わせ&nbsp;&nbsp;&gt;</a>
       </div>
       <div class="footer__right">
         <span class="crest" aria-hidden="true">
